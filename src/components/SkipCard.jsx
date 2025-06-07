@@ -1,3 +1,5 @@
+import { FaCheckCircle } from "react-icons/fa";
+
 const SkipCard = ({ skip, isSelected, onSelect }) => {
   const {
     size,
@@ -15,10 +17,18 @@ const SkipCard = ({ skip, isSelected, onSelect }) => {
   return (
     <div
       onClick={() => onSelect(skip.id)}
-      className={`cursor-pointer bg-white rounded-2xl shadow-md p-6 w-full sm:w-80 transform transition-transform duration-200 hover:scale-105 border-2 ${
+      className={`relative cursor-pointer bg-white rounded-2xl shadow-md p-6 w-full sm:w-80 transform transition-transform duration-200 hover:scale-105 border-2 ${
         isSelected ? "border-orange-500 shadow-lg" : "border-transparent"
       }`}
     >
+      {/* Selected Badge */}
+      {isSelected && (
+        <div className="absolute top-2 right-2 bg-orange-100 text-orange-600 px-2 py-1 rounded-full flex items-center text-xs font-semibold shadow-sm">
+          <FaCheckCircle className="mr-1 text-sm" />
+          Selected
+        </div>
+      )}
+
       <img
         src={imageUrl}
         alt={`${size} Yard Skip`}
