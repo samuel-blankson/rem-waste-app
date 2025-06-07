@@ -1,70 +1,108 @@
-# Getting Started with Create React App
+# Skip Booking App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This is a React-based skip booking application that allows users to select skip sizes, filter options, and proceed through multiple booking stages such as postcode entry, waste type selection, permit checks, date selection, and payment.
 
-In the project directory, you can run:
+The app uses React Context API for state management of the current booking stage, and Framer Motion for smooth animations in the skip details drawer.
 
-### `yarn start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Multi-stage booking flow with stages:
+  - Postcode input
+  - Waste type selection
+  - Skip size selection with filtering options
+  - Permit check
+  - Date selection
+  - Payment
+- Skip size selection with detailed drawer displaying pricing and options
+- Filters for skip size, price range, road allowance, and heavy waste acceptance
+- Local caching of skip data to minimize API calls and improve performance
+- Responsive UI with Tailwind CSS styling
+- Animated drawer using Framer Motion
+- Icon usage via React Icons for intuitive UI elements
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
 
-### `yarn test`
+- React (functional components & hooks)
+- React Context API for stage management
+- Framer Motion for animation
+- Tailwind CSS for styling
+- React Icons for UI icons
+- Fetch API for data retrieval
+- LocalStorage for data caching
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Structure
 
-### `yarn build`
+src/
+├── components/
+│ ├── Navbar.jsx
+│ ├── SkipCard.jsx
+│ ├── SkipDrawer.jsx
+├── context/
+│ └── SkipContext.jsx
+├── constants/
+│ └── stageKeys.js
+├── hooks/
+│ └── useStageNavigation.jsx
+├── pages/
+│ ├── Skips.jsx
+│ ├── Postcode.jsx
+│ ├── WasteType.jsx
+│ ├── PermitCheck.jsx
+│ ├── ChooseDate.jsx
+│ ├── Payment.jsx
+├── App.jsx
+├── index.jsx
+└── index.css
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+bash
+Copy
+Edit
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Setup & Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository:
 
-### `yarn eject`
+```bash
+git clone https://github.com/yourusername/skip-booking-app.git
+cd skip-booking-app
+Install dependencies:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+bash
+Copy
+Edit
+npm install
+# or
+yarn install
+Run the app locally:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+bash
+Copy
+Edit
+npm start
+# or
+yarn start
+Open your browser and navigate to http://localhost:3000
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Usage
+Navigate through the stages by selecting options and clicking "Continue" or "Back."
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+On the "Select Skip" stage, filter skips by size, price, road allowance, or heavy waste.
 
-## Learn More
+Click on a skip card to view more details in the drawer.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Proceed through to payment once all required stages are completed.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Notes
+The skip data is fetched from https://app.wewantwaste.co.uk/api/skips/by-location?postcode=NR32&area=Lowestoft and cached for 10 minutes in localStorage.
 
-### Code Splitting
+Some UI components use icons from React Icons for enhanced UX.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The app’s multi-stage navigation uses React Context for global state management.
 
-### Analyzing the Bundle Size
+License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Developed by Samuel Blankson
+```

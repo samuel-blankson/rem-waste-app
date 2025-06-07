@@ -1,32 +1,10 @@
-import React, { useContext, useEffect } from "react";
-import { SkipContext } from "../context/SkipContext";
-import { STAGE_KEYS } from "../constants/stageKeys";
+import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import useStageNavigation from "../hooks/useStageNavigation";
 
 const SkipDrawer = ({ selectedSkip, onClose }) => {
-  const { selectedStageId, setSelectedStageId } = useContext(SkipContext);
-
-  const stages = Object.values(STAGE_KEYS);
-  const currentIndex = stages.indexOf(selectedStageId);
-
-  useEffect(() => {
-    console.log({ selectedSkip });
-  }, []);
-
-  const goToPreviousStage = () => {
-    if (currentIndex > 0) {
-      setSelectedStageId(stages[currentIndex - 1]);
-      onClose();
-    }
-  };
-
-  const goToNextStage = () => {
-    if (currentIndex < stages.length - 1) {
-      setSelectedStageId(stages[currentIndex + 1]);
-      onClose();
-    }
-  };
+  const { goToPreviousStage, goToNextStage } = useStageNavigation(onClose);
 
   if (!selectedSkip) return null;
 

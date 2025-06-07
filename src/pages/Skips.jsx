@@ -43,6 +43,10 @@ const Skips = () => {
           JSON.stringify({ data, timestamp: Date.now() })
         );
         setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Failed to fetch skips:", error);
+        setLoading(false);
       });
   };
 
