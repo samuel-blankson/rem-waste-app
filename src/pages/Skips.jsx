@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import SkipCard from "../components/SkipCard";
 import SkipDrawer from "../components/SkipDrawar";
+import { skip_API_URL } from "../constants/api";
 
 const CACHE_KEY = "skip_data_cache";
 const CACHE_DURATION = 1000 * 60 * 10; // 10 minutes
@@ -32,9 +33,7 @@ const Skips = () => {
   }, []);
 
   const fetchData = () => {
-    fetch(
-      "https://app.wewantwaste.co.uk/api/skips/by-location?postcode=NR32&area=Lowestoft"
-    )
+    fetch(skip_API_URL)
       .then((res) => res.json())
       .then((data) => {
         setSkips(data);
