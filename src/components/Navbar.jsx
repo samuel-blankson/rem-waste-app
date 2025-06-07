@@ -1,22 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { IoLocationOutline } from "react-icons/io5";
-import { RiDeleteBin5Line } from "react-icons/ri";
-import { LuTruck } from "react-icons/lu";
-import { SiAuth0 } from "react-icons/si";
-import { MdOutlineDateRange, MdPayment } from "react-icons/md";
 
-const stages = [
-  { key: "postcode", icon: IoLocationOutline, label: "Postcode" },
-  { key: "waste", icon: RiDeleteBin5Line, label: "Waste Type" },
-  { key: "skip", icon: LuTruck, label: "Select Skip" },
-  { key: "permit", icon: SiAuth0, label: "Permit Check" },
-  { key: "date", icon: MdOutlineDateRange, label: "Choose Date" },
-  { key: "payment", icon: MdPayment, label: "Payment" },
-];
+import { stages } from "../constants/stageKeys";
+import { useSkip } from "../context/SkipContext";
 
-const Navbar = ({ currentStage }) => {
-  const currentIndex = stages.findIndex((s) => s.key === currentStage);
+const Navbar = () => {
+  const { selectedStageId } = useSkip();
+  const currentIndex = stages.findIndex((s) => s.key === selectedStageId);
 
   return (
     <div className="w-full px-4 py-6 bg-white shadow-md">

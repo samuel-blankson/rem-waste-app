@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import SkipCard from "../components/SkipCard";
+import SkipDrawer from "../components/SkipDrawar";
 
 const CACHE_KEY = "skip_data_cache";
 const CACHE_DURATION = 1000 * 60 * 10; // 10 minutes
@@ -8,7 +9,7 @@ const Skips = () => {
   const [skips, setSkips] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchSize, setSearchSize] = useState("");
-  const [selectedSkipId, setSelectedSkipId] = useState(null);
+  const [selectedSkip, setSelectedSkip] = useState(null);
 
   const [priceFilter, setPriceFilter] = useState("");
   const [priceValue, setPriceValue] = useState("");
@@ -45,8 +46,8 @@ const Skips = () => {
       });
   };
 
-  const handleSelect = (id) => {
-    setSelectedSkipId((prevId) => (prevId === id ? null : id));
+  const handleSelect = (skip) => {
+    setSelectedSkip((prevSkip) => (prevSkip?.id === skip.id ? null : skip));
   };
 
   const clearFilters = () => {
@@ -168,11 +169,18 @@ const Skips = () => {
             <SkipCard
               key={skip.id}
               skip={skip}
-              isSelected={skip.id === selectedSkipId}
-              onSelect={handleSelect}
+              isSelected={selectedSkip?.id === skip.id}
+              onSelect={() => handleSelect(skip)}
             />
           ))}
         </div>
+      )}
+
+      {selectedSkip && (
+        <SkipDrawer
+          selectedSkip={selectedSkip}
+          onClose={() => setSelectedSkip(null)}
+        />
       )}
     </div>
   );
