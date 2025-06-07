@@ -65,8 +65,8 @@ Edit
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/skip-booking-app.git
-cd skip-booking-app
+git clone https://github.com/samuel-blankson/rem-waste-app.git
+cd rem-waste-app
 Install dependencies:
 
 bash
