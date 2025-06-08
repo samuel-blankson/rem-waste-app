@@ -6,6 +6,10 @@ This is a React-based skip booking application that allows users to select skip 
 
 The app uses React Context API for state management of the current booking stage, and Framer Motion for smooth animations in the skip details drawer.
 
+## 🔗 Live Demo
+
+[View Deployed App](https://remwastemgt.netlify.app/)
+
 ## Features
 
 - Multi-stage booking flow with stages:
@@ -34,6 +38,7 @@ The app uses React Context API for state management of the current booking stage
 
 ## Project Structure
 
+```text
 src/
 ├── components/
 │ ├── Navbar.jsx
@@ -55,10 +60,7 @@ src/
 ├── App.jsx
 ├── index.jsx
 └── index.css
-
-bash
-Copy
-Edit
+```
 
 ## Setup & Installation
 
