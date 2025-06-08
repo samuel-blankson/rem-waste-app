@@ -71,17 +71,11 @@ git clone https://github.com/samuel-blankson/rem-waste-app.git
 cd rem-waste-app
 Install dependencies:
 
-bash
-Copy
-Edit
 npm install
 # or
 yarn install
 Run the app locally:
 
-bash
-Copy
-Edit
 npm start
 # or
 yarn start
