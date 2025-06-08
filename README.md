@@ -97,8 +97,6 @@ Some UI components use icons from React Icons for enhanced UX.
 
 The app’s multi-stage navigation uses React Context for global state management.
 
-License
-
 
 Developed by Samuel Blankson
 ```
