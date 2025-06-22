@@ -18,6 +18,10 @@ const SkipCard = ({ skip, isSelected, onSelect }) => {
     8: "https://www.batemanskips.co.uk/wp-content/uploads/2019/08/4-yard-skip-1.jpg",
     10: "https://www.murrskiphire.co.uk/wp-content/uploads/2024/02/skip-hire-home-delivery.jpg",
     12: "https://www.murrskiphire.co.uk/wp-content/uploads/2024/02/skip-hire-home-delivery.jpg",
+    14: "https://www.murrskiphire.co.uk/wp-content/uploads/2024/02/skip-hire-home-delivery.jpg",
+    16: "https://www.murrskiphire.co.uk/wp-content/uploads/2024/02/skip-hire-home-delivery.jpg",
+    20: "https://www.murrskiphire.co.uk/wp-content/uploads/2024/02/skip-hire-home-delivery.jpg",
+    40: "https://www.murrskiphire.co.uk/wp-content/uploads/2024/02/skip-hire-home-delivery.jpg",
   };
 
   // this imageUrl is using images from rem waste
