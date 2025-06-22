@@ -12,7 +12,18 @@ const SkipCard = ({ skip, isSelected, onSelect }) => {
 
   const total = price_before_vat + (price_before_vat * vat) / 100;
 
-  const imageUrl = `https://yozbrydxdlcxghkphhtq.supabase.co/storage/v1/object/public/skips/skip-sizes/${size}-yarder-skip.jpg`;
+  const skipImages = {
+    4: "https://images.unsplash.com/photo-1586864387784-b2621f1065a1?auto=format&fit=crop&w=800&q=60",
+    6: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Skip_container.jpg",
+    8: "https://www.skiphireuk.co.uk/blog/wp-content/uploads/2019/10/skip_sizes.jpg",
+    10: "https://www.fastskips.co.uk/wp-content/uploads/2020/07/skip-sizes-guide.jpg",
+    12: "https://www.skiphirecomparison.co.uk/media/images/skip-sizes-guide.jpg",
+  };
+
+  // this imageUrl is using images from rem waste
+  // const imageUrl = `https://yozbrydxdlcxghkphhtq.supabase.co/storage/v1/object/public/skips/skip-sizes/${size}-yarder-skip.jpg`;
+
+  const imageUrl = skipImages[size];
 
   return (
     <div
